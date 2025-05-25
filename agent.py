@@ -32,7 +32,7 @@ class LegalDocumentAgent:
     Coordinates planning, memory, and execution phases
     """
     
-    def __init__(self, openrouter_api_key: str, budget_limit: float = 10.0, model: str = "anthropic/claude-sonnet-4"):
+    def __init__(self, openrouter_api_key: str, budget_limit: float = 10.0, model: str = "openai/gpt-4.1-mini"):
         self.client = OpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=openrouter_api_key,
@@ -65,8 +65,43 @@ class LegalDocumentAgent:
         Respond in JSON format with your analysis.
         """
         
+        # Define schema for analysis response
+        analysis_schema = {
+            "name": "document_analysis",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "sections": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "List of document sections identified"
+                    },
+                    "strategy": {
+                        "type": "string",
+                        "description": "Processing strategy (e.g., sequential, parallel)"
+                    },
+                    "estimated_cost": {
+                        "type": "number",
+                        "description": "Estimated processing cost in USD"
+                    },
+                    "complexity": {
+                        "type": "string",
+                        "enum": ["low", "medium", "high"],
+                        "description": "Document complexity level"
+                    },
+                    "considerations": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "Special considerations for processing"
+                    }
+                },
+                "required": ["sections", "strategy", "estimated_cost", "complexity", "considerations"],
+                "additionalProperties": False
+            }
+        }
+        
         try:
-            response = await self._call_llm(analysis_prompt, max_tokens=1000)
+            response = await self._call_llm(analysis_prompt, max_tokens=1000, schema=analysis_schema)
             analysis = json.loads(response)
             
             # Create processing plan
@@ -104,8 +139,12 @@ class LegalDocumentAgent:
         # Build context-aware prompt
         prompt = self._build_section_prompt(section_text, section_type, context)
         
+        # Get schema for this section type
+        section_schema = self._get_section_schema(section_type)
+        
         try:
-            response = await self._call_llm(prompt, max_tokens=2000)
+            response = await self._call_llm(prompt, max_tokens=2000, schema=section_schema)
+            print(response)
             result = json.loads(response)
             
             # Update memory with learned patterns
@@ -116,6 +155,160 @@ class LegalDocumentAgent:
         except Exception as e:
             print(f"❌ Error processing {section_type}: {e}")
             return {"error": str(e), "section_type": section_type}
+    
+    def _get_section_schema(self, section_type: str) -> Dict[str, Any]:
+        """Get JSON schema for specific section type"""
+        
+        if section_type == "menimbang":
+            return {
+                "name": "menimbang_section",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"type": "string", "const": "menimbang"},
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "letter": {"type": "string", "description": "Item letter (a, b, c, etc.)"},
+                                    "content": {"type": "string", "description": "Content of the consideration"}
+                                },
+                                "required": ["letter", "content"],
+                                "additionalProperties": False
+                            }
+                        }
+                    },
+                    "required": ["type", "items"],
+                    "additionalProperties": False
+                }
+            }
+            
+        elif section_type == "mengingat":
+            return {
+                "name": "mengingat_section",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"type": "string", "const": "mengingat"},
+                        "items": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "letter": {"type": "string", "description": "Item letter (a, b, c, etc.)"},
+                                    "content": {"type": "string", "description": "Content of the reference"},
+                                    "references": {
+                                        "type": "array",
+                                        "items": {"type": "string"},
+                                        "description": "Legal references mentioned"
+                                    }
+                                },
+                                "required": ["letter", "content", "references"],
+                                "additionalProperties": False
+                            }
+                        }
+                    },
+                    "required": ["type", "items"],
+                    "additionalProperties": False
+                }
+            }
+            
+        elif section_type.startswith("pasal_"):
+            return {
+                "name": "pasal_section",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"type": "string", "const": "pasal"},
+                        "number": {"type": "integer", "description": "Article number"},
+                        "ayat": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "number": {"type": "integer", "description": "Ayat number"},
+                                    "content": {"type": "string", "description": "Ayat content"},
+                                    "sub_items": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {"type": "string", "enum": ["huruf", "angka"]},
+                                                "letter": {"type": "string", "description": "Letter for huruf items"},
+                                                "number": {"type": "integer", "description": "Number for angka items"},
+                                                "content": {"type": "string", "description": "Sub-item content"}
+                                            },
+                                            "required": ["type", "content", "letter", ""],
+                                            "additionalProperties": False
+                                        }
+                                    }
+                                },
+                                "required": ["number", "content"],
+                                "additionalProperties": False
+                            }
+                        },
+                        "cross_references": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "Cross-references to other articles"
+                        }
+                    },
+                    "required": ["type", "number", "ayat"],
+                    "additionalProperties": False
+                }
+            }
+            
+        elif section_type == "penjelasan":
+            return {
+                "name": "penjelasan_section",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"type": "string", "const": "penjelasan"},
+                        "general_explanation": {"type": "string", "description": "General explanation text"},
+                        "article_explanations": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "pasal_number": {"type": "integer", "description": "Article number being explained"},
+                                    "explanation": {"type": "string", "description": "Explanation text"},
+                                    "links_to": {
+                                        "type": "array",
+                                        "items": {"type": "string"},
+                                        "description": "Links to other articles or sections"
+                                    }
+                                },
+                                "required": ["pasal_number", "explanation", "links_to"],
+                                "additionalProperties": False
+                            }
+                        }
+                    },
+                    "required": ["type", "general_expalantion", "article_explanation"],
+                    "additionalProperties": False
+                }
+            }
+            
+        else:
+            # Generic schema for other section types
+            return {
+                "name": "generic_section",
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "type": {"type": "string", "description": "Section type"},
+                        "content": {"type": "string", "description": "Section content"},
+                        "structure": {
+                            "type": "object",
+                            "description": "Structured content if applicable",
+                            "additionalProperties": False
+                        }
+                    },
+                    "required": ["type", "content", "structure"],
+                    "additionalProperties": False
+                }
+            }
     
     def _build_section_prompt(self, section_text: str, section_type: str, context: Dict[str, Any]) -> str:
         """Build context-aware prompt for section processing"""
@@ -139,47 +332,25 @@ class LegalDocumentAgent:
         
         if section_type == "menimbang":
             return base_prompt + """
-            Extract the "Menimbang" (considerations) section into structured JSON:
-            {
-              "type": "menimbang",
-              "items": [
-                {"letter": "a", "content": "..."},
-                {"letter": "b", "content": "..."}
-              ]
-            }
+            Extract the "Menimbang" (considerations) section into structured JSON.
+            Pay attention to:
+            - Each consideration item (usually marked with letters a, b, c, etc.)
+            - The content of each consideration
             """
             
         elif section_type == "mengingat":
             return base_prompt + """
-            Extract the "Mengingat" (references) section into structured JSON:
-            {
-              "type": "mengingat", 
-              "items": [
-                {"letter": "a", "content": "...", "references": ["UUD", "Pasal X"]}
-              ]
-            }
+            Extract the "Mengingat" (references) section into structured JSON.
+            Pay attention to:
+            - Each reference item (usually marked with letters a, b, c, etc.)
+            - Legal references mentioned (UUD, other laws, etc.)
             """
             
-        elif section_type == "pasal":
+        elif section_type.startswith("pasal_"):
             return base_prompt + """
-            Extract this Pasal (article) into structured JSON:
-            {
-              "type": "pasal",
-              "number": X,
-              "ayat": [
-                {
-                  "number": 1,
-                  "content": "...",
-                  "sub_items": [
-                    {"type": "huruf", "letter": "a", "content": "..."},
-                    {"type": "angka", "number": 1, "content": "..."}
-                  ]
-                }
-              ],
-              "cross_references": ["Pasal Y", "ayat Z"]
-            }
-            
+            Extract this Pasal (article) into structured JSON.
             Pay special attention to:
+            - Article number
             - Hierarchical structure (ayat, huruf, angka)
             - Cross-references to other articles
             - Legal terminology that should be tracked
@@ -187,18 +358,11 @@ class LegalDocumentAgent:
             
         elif section_type == "penjelasan":
             return base_prompt + """
-            Extract this Penjelasan (explanation) section and link it to main articles:
-            {
-              "type": "penjelasan",
-              "general_explanation": "...",
-              "article_explanations": [
-                {
-                  "pasal_number": X,
-                  "explanation": "...",
-                  "links_to": ["Pasal Y", "ayat Z"]
-                }
-              ]
-            }
+            Extract this Penjelasan (explanation) section and link it to main articles.
+            Pay attention to:
+            - General explanation text
+            - Specific article explanations
+            - Links between explanations and main articles
             """
             
         else:
@@ -235,24 +399,38 @@ class LegalDocumentAgent:
             'structure': result.get('type', 'unknown')
         }
     
-    async def _call_llm(self, prompt: str, max_tokens: int = 1000) -> str:
-        """Call LLM API via OpenRouter with cost tracking"""
+    async def _call_llm(self, prompt: str, max_tokens: int = 1000, schema: Optional[Dict[str, Any]] = None) -> str:
+        """Call LLM API via OpenRouter with cost tracking and optional structured output"""
         
-        # Estimate cost (rough approximation for Claude Haiku via OpenRouter)
+        # Estimate cost (rough approximation for GPT-4o-mini via OpenRouter)
         estimated_cost = (len(prompt) + max_tokens) * 0.000005  # OpenRouter is cheaper
         
         if self.current_cost + estimated_cost > self.budget_limit:
             raise Exception(f"Budget limit exceeded. Current: ${self.current_cost:.2f}, Estimated: ${estimated_cost:.2f}")
         
         try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[
+            # Build request parameters
+            request_params = {
+                "model": self.model,
+                "messages": [
                     {"role": "user", "content": prompt}
                 ],
-                max_tokens=max_tokens,
-                temperature=0.1  # Low temperature for consistent structured output
-            )
+                "max_tokens": max_tokens,
+                "temperature": 0.1  # Low temperature for consistent structured output
+            }
+            
+            # Add structured output if schema is provided
+            if schema:
+                request_params["response_format"] = {
+                    "type": "json_schema",
+                    "json_schema": {
+                        "name": schema.get("name", "response"),
+                        "strict": True,
+                        "schema": schema["schema"]
+                    }
+                }
+            
+            response = self.client.chat.completions.create(**request_params)
             
             self.current_cost += estimated_cost
             print(f"💰 Cost update: ${self.current_cost:.2f} / ${self.budget_limit:.2f}")
