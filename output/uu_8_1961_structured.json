@@ -1,0 +1,76 @@
+{
+  "metadata": {
+    "document_id": "UU_8_1961",
+    "processing_plan": {
+      "document_id": "UU_8_1961",
+      "sections": [
+        "header",
+        "menimbang",
+        "mengingat",
+        "pasal",
+        "penjelasan"
+      ],
+      "processing_strategy": "sequential",
+      "estimated_cost": 5.0,
+      "complexity": "medium",
+      "special_considerations": [
+        "manual_fallback"
+      ]
+    },
+    "processing_started": "2025-05-25T18:23:28.341110",
+    "processing_completed": "2025-05-25T18:25:29.382116",
+    "total_cost": 0.24485000000000004,
+    "memory_state": {}
+  },
+  "content": {
+    "header": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "header"
+    },
+    "memutuskan": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "memutuskan"
+    },
+    "pasal_1": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "pasal_1"
+    },
+    "pasal_2": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "pasal_2"
+    },
+    "pasal_3": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "pasal_3"
+    },
+    "pasal_4": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "pasal_4"
+    },
+    "pasal_5": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "pasal_5"
+    },
+    "pasal_6": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "pasal_6"
+    },
+    "pasal_7": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "pasal_7"
+    },
+    "pasal_8": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "pasal_8"
+    },
+    "pasal_9": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "pasal_9"
+    },
+    "penjelasan": {
+      "error": "Expecting value: line 1 column 1 (char 0)",
+      "section_type": "penjelasan"
+    }
+  },
+  "cross_reference_map": {}
+}
