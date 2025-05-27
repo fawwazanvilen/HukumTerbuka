@@ -56,14 +56,17 @@ async def analyze_document(ctx: RunContextWrapper[Any], file_path: str) -> str:
         complexity_score = min(1.0, (word_count / 10000) * 0.5 + (pasal_count / 50) * 0.3 + (bab_count / 20) * 0.2)
         
         # Recommend chunking strategy based on document characteristics
-        if word_count < 1000:
-            chunking_strategy = "single_chunk"
-        elif word_count < 5000:
-            chunking_strategy = "by_words_2000"
-        elif word_count < 15000:
-            chunking_strategy = "by_words_3000"
-        else:
-            chunking_strategy = "by_words_4000"
+        # if word_count < 1000:
+        #     chunking_strategy = "single_chunk"
+        # elif word_count < 5000:
+        #     chunking_strategy = "by_words_2000"
+        # elif word_count < 15000:
+        #     chunking_strategy = "by_words_3000"
+        # else:
+        #     chunking_strategy = "by_words_4000"
+
+        # just use a single chunking strategy for now
+        chunking_strategy = "by_chars_2000"
         
         # Extract structure hints (case insensitive)
         structure_hints = []
