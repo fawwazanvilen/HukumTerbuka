@@ -1,4 +1,5 @@
 import os
+import json
 from typing import Any
 from openai import AsyncOpenAI
 from agents import Agent, Runner, set_default_openai_client, set_default_openai_api, set_tracing_disabled, set_trace_processors
@@ -117,12 +118,14 @@ async def process_legal_document(file_path: str, document_id: str = None) -> dic
 
         # Create a simple context (can be expanded later)
         context = {"document_id": document_id, "file_path": file_path}
+        print(json.dumps(context, indent=2))
         
         # Start the orchestration process
         result = await Runner.run(
             orchestrator_agent,
             f"Process the legal document at: {file_path}. Document ID: {document_id}",
-            context=context
+            context=context,
+            max_turns=15
         )
         
         return {
