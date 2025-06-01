@@ -1,0 +1,1132 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* ========================================
+   IMPROVED LEMBARAN NEGARA CSS STYLING
+   ======================================== */
+
+/* --- Reset and Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'EB Garamond', 'Georgia', 'Times New Roman', 'Liberation Serif', serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* --- Document Container --- */
+.akn-act {
+    background-color: #fff;
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 25mm 20mm;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    min-height: 297mm;
+    position: relative;
+}
+
+/* Hide metadata */
+.akn-meta {
+    display: none !important;
+}
+
+/* --- PREAMBLE STYLING --- */
+.akn-preamble {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+/* Document titles */
+.akn-doctitle {
+    margin: 0.3em 0;
+    font-weight: normal;
+    font-size: 12pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+/* Specific title styling */
+#act__preamble__doctitle_1 { 
+    font-weight: bold; 
+    margin-bottom: 0.8em; 
+}
+
+#act__preamble__doctitle_5 { 
+    font-weight: bold; 
+    font-size: 13pt; 
+    margin: 0.8em 0 1.2em 0;
+    text-decoration: underline;
+}
+
+#act__preamble__doctitle_6 { 
+    font-weight: bold; 
+    margin: 1.5em 0 1em 0; 
+}
+
+/* --- Menimbang and Mengingat sections --- */
+.akn-recitals, .akn-citations {
+    text-align: left;
+    margin: 1.5em 0;
+    position: relative;
+}
+
+.akn-recitals::before {
+    content: "Menimbang";
+    display: block;
+    margin-left: 2cm;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+}
+
+.akn-citations::before {
+    content: "Mengingat";
+    display: block;
+    margin-left: 2cm;
+    margin-bottom: 0.5em;
+    font-weight: normal;
+}
+
+/* Individual recital/citation items */
+.akn-recital, .akn-citation {
+    display: flex;
+    margin-left: 2.5cm;
+    margin-bottom: 0.3em;
+    text-align: justify;
+}
+
+.akn-recital > .akn-num, .akn-citation > .akn-num {
+    flex: 0 0 1.5em;
+    font-weight: normal;
+}
+
+.akn-recital > .akn-p, .akn-citation > .akn-p {
+    flex: 1;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* --- Approval and Decision --- */
+.akn-container[name="approvalStatement"], 
+.akn-container-name-approvalstatement {
+    text-align: center;
+    margin: 2em 0;
+    font-style: italic;
+}
+
+.akn-formula[name="decision"],
+.akn-formula-name-decision {
+    text-align: center;
+    margin: 2em 0 1.5em 0;
+}
+
+.akn-formula[name="decision"] .akn-p,
+.akn-formula-name-decision .akn-p {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 11pt; /* Changed from 13pt to 12pt to match document */
+}
+
+/* ===============================================
+   FIXED REVOCATION AND ENACTING SECTIONS
+   =============================================== */
+
+/* --- Revocation Container (I. Mencabut) --- */
+.akn-container[name="revocation"],
+.akn-container-name-revocation {
+    display: flex !important;
+    align-items: flex-start;
+    margin: 1.5em 0 1.5em 2cm;
+    font-size: 11pt;
+    line-height: 1.5;
+}
+
+.akn-container[name="revocation"] > .akn-num,
+.akn-container-name-revocation > .akn-num {
+    flex: 0 0 auto;
+    font-weight: bold;
+    margin-right: 0.5em;
+    min-width: 1.5em;
+}
+
+.akn-container[name="revocation"] .akn-content,
+.akn-container-name-revocation .akn-content {
+    flex: 1;
+}
+
+.akn-container[name="revocation"] .akn-content .akn-p,
+.akn-container-name-revocation .akn-content .akn-p {
+    margin: 0;
+    text-align: justify;
+}
+
+/* --- Enacting Formula (II. Menetapkan) - FIXED --- */
+.akn-enactingformula,
+.akn-enactingformula-name-enactingformula {
+    display: flex !important;
+    align-items: flex-start;
+    margin: 1.5em 0 3em 2cm;
+    font-size: 11pt;
+    line-height: 1.5;
+}
+
+.akn-enactingformula > .akn-num,
+.akn-enactingformula-name-enactingformula > .akn-num {
+    flex: 0 0 auto;
+    font-weight: bold;
+    margin-right: 0.5em;
+    min-width: 1.5em;
+}
+
+.akn-enactingformula > .akn-content,
+.akn-enactingformula-name-enactingformula > .akn-content {
+    flex: 1;
+}
+
+/* Style the document type and title as inline elements */
+.akn-enactingformula .akn-doctype,
+.akn-enactingformula-name-enactingformula .akn-doctype {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.akn-enactingformula .akn-doctitle,
+.akn-enactingformula-name-enactingformula .akn-doctitle {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* --- MAIN BODY --- */
+.akn-main {
+    margin-top: 3em;
+}
+
+/* --- Article (Pasal) Styling --- */
+.akn-article {
+    margin-bottom: 2em;
+    page-break-inside: avoid;
+}
+
+.akn-article > .akn-num:first-child {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12pt;
+    margin: 2em 0 1em 0;
+    padding: 0;
+}
+
+/* --- Paragraph (Ayat) Styling --- */
+.akn-paragraph.akn-ayat {
+    margin-left: 1.5cm;
+    margin-bottom: 1em;
+    position: relative;
+    padding-left: 2em;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.akn-paragraph.akn-ayat > .akn-num:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.8em;
+    font-weight: bold;
+    text-align: left;
+}
+
+.akn-paragraph.akn-ayat .akn-content {
+    display: block;
+}
+
+.akn-paragraph.akn-ayat .akn-p {
+    margin: 0 0 0.5em 0;
+}
+
+/* --- List Styling --- */
+.akn-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin: 0.8em 0 0.8em 1cm;
+}
+
+.akn-point {
+    position: relative;
+    padding-left: 2em;
+    margin-bottom: 0.5em;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.akn-point > .akn-num:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.8em;
+    font-weight: normal;
+}
+
+.akn-point .akn-content {
+    display: block;
+}
+
+.akn-point .akn-p {
+    margin: 0;
+}
+
+/* --- Promulgation Command --- */
+.akn-container-name-promulgationcommand {
+    margin: 3em 0;
+    text-align: justify;
+    padding: 0 1cm;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* --- CONCLUSIONS AND SIGNATURES --- */
+.akn-conclusions {
+    margin-top: 4em;
+    page-break-inside: avoid;
+}
+
+.akn-container-name-signatureblock,
+.akn-container-name-promulgationblock {
+    width: 48%;
+    float: right;
+    margin-top: 2em;
+    clear: right;
+}
+
+.akn-container-name-placedateofsignature .akn-p,
+.akn-container-name-placedateofpromulgation .akn-p {
+    margin: 0 0 0.2em 0;
+    line-height: 1.3;
+}
+
+.akn-role {
+    margin: 1em 0 2.5em 0;
+    font-weight: normal;
+}
+
+.akn-person {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* Clear float after signatures */
+.akn-conclusions::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- ATTACHMENTS (PENJELASAN) --- */
+.akn-attachments {
+    margin-top: 5em;
+    padding-top: 2em;
+    border-top: 2px solid #000;
+    page-break-before: always;
+}
+
+.akn-attachments .akn-doctitle {
+    font-size: 13pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2em;
+    text-decoration: underline;
+}
+
+.akn-attachments .akn-heading {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 2em 0 1em 0;
+}
+
+.akn-clause {
+    margin-bottom: 1.5em;
+}
+
+.akn-clause > .akn-heading {
+    text-align: left;
+    font-style: italic;
+    margin-bottom: 0.5em;
+    text-transform: none;
+    font-size: 11pt;
+}
+
+.akn-attachments .akn-p {
+    text-align: justify;
+    margin-bottom: 0.8em;
+    line-height: 1.5;
+}
+
+.akn-attachments .akn-list {
+    margin-left: 1.5cm;
+}
+
+/* --- Responsive Design --- */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .akn-act {
+        padding: 15mm 10mm;
+        max-width: 100%;
+    }
+
+    .akn-paragraph.akn-ayat,
+    .akn-recital,
+    .akn-citation {
+        margin-left: 1cm;
+    }
+
+    .akn-container-name-signatureblock,
+    .akn-container-name-promulgationblock {
+        width: 100%;
+        float: none;
+        margin-top: 1em;
+    }
+
+    .akn-container[name="revocation"],
+    .akn-container-name-revocation,
+    .akn-enactingformula,
+    .akn-enactingformula-name-enactingformula {
+        margin-left: 1cm;
+    }
+}
+
+/* --- Print Styles --- */
+@media print {
+    body {
+        background: white;
+        font-size: 12pt;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .akn-act {
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        padding: 2cm;
+    }
+
+    .akn-article {
+        page-break-inside: avoid;
+    }
+
+    .akn-attachments {
+        page-break-before: always;
+    }
+}
+</style>
+<div class="akn-akomantoso">
+ <article class="akn-act akn-act-name-indonesianact" id="act">
+  <div class="akn-meta" style="display:none;" title="AKN Meta: act__meta">
+   <div class="akn-identification" id="act__meta__identification">
+    <div class="akn-frbrwork" id="act__meta__identification__work">
+     <span class="akn-frbrthis">
+     </span>
+     <span class="akn-frbruri">
+     </span>
+     <span class="akn-frbrdate akn-frbrdate-name-creation">
+     </span>
+     <span class="akn-frbrauthor">
+     </span>
+     <span class="akn-frbrcountry">
+     </span>
+     <span class="akn-frbrname">
+     </span>
+     <span class="akn-frbrnumber">
+     </span>
+    </div>
+    <div class="akn-frbrmanifestation akn-frbrmanifestation-name-publication" id="act__meta__identification__manifestation">
+     <span class="akn-frbrthis">
+     </span>
+     <span class="akn-frbruri">
+     </span>
+     <span class="akn-frbrdate akn-frbrdate-name-publication">
+     </span>
+     <span class="akn-frbrformat">
+     </span>
+    </div>
+   </div>
+   <div class="akn-lifecycle" id="act__meta__lifecycle">
+    <div class="akn-eventref akn-eventref-type-enactment" id="act__meta__lifecycle__enactment_1">
+    </div>
+   </div>
+   <div class="akn-references" id="act__meta__references">
+    <div class="akn-tlcrole" id="presidenRI">
+    </div>
+    <div class="akn-tlcperson" id="djuanda">
+    </div>
+    <div class="akn-tlcrole" id="pejabatSekretarisNegara">
+    </div>
+    <div class="akn-tlcperson" id="santoso">
+    </div>
+   </div>
+   <div class="akn-publication akn-publication-name-lembarannegara" id="act__meta__publication_ln_1961_207">
+   </div>
+   <div class="akn-publication akn-publication-name-tambahanlembarannegara" id="act__meta__publication_tln_1961_2270">
+   </div>
+  </div>
+  <header class="akn-preamble" id="act__preamble">
+   <h2 class="akn-doctitle" id="act__preamble__doctitle_1">
+    PRESIDEN REPUBLIK INDONESIA
+   </h2>
+   <h2 class="akn-doctitle" id="act__preamble__doctitle_2">
+    UNDANG-UNDANG REPUBLIK INDONESIA
+   </h2>
+   <h2 class="akn-doctitle" id="act__preamble__doctitle_3">
+    NOMOR 8 TAHUN 1961
+   </h2>
+   <h2 class="akn-doctitle" id="act__preamble__doctitle_4">
+    TENTANG
+   </h2>
+   <h2 class="akn-doctitle" id="act__preamble__doctitle_5">
+    WAJIB KERJA SARJANA
+   </h2>
+   <h2 class="akn-doctitle" id="act__preamble__doctitle_6">
+    PRESIDEN REPUBLIK INDONESIA,
+   </h2>
+   <section class="akn-recitals akn-recitals-name-considerations" id="act__preamble__recitals_1">
+    <div class="akn-recital" id="act__preamble__recitals_1__rec_a">
+     <span class="akn-num">
+      a.
+     </span>
+     <p class="akn-p">
+      bahwa ilmu dan keahlian azasnya untuk mengabdi kepada tanah air, karenanya perlu dikembangkan dan dilaksanakan.
+     </p>
+    </div>
+    <div class="akn-recital" id="act__preamble__recitals_1__rec_b">
+     <span class="akn-num">
+      b.
+     </span>
+     <p class="akn-p">
+      bahwa dalam rangka pembangunan nasional semesta berencana sangat diperlukan tenaga sarjana dari perbagai jurusan;
+     </p>
+    </div>
+    <div class="akn-recital" id="act__preamble__recitals_1__rec_c">
+     <span class="akn-num">
+      c.
+     </span>
+     <p class="akn-p">
+      bahwa agar penempatan dan penggunaan tenaga sarjana tersebut teratur dan merata maka perlu diadakan peraturan wajib kerja sarjana;
+     </p>
+    </div>
+   </section>
+   <section class="akn-citations akn-citations-name-references" id="act__preamble__citations_1">
+    <div class="akn-citation" id="act__preamble__citations_1__cit_a">
+     <span class="akn-num">
+      a.
+     </span>
+     <p class="akn-p">
+      Pasal 5 ayat (1) jo. Pasal 20 ayat (1) dan Pasal 27 ayat (2) Undang-undang Dasar;
+     </p>
+    </div>
+    <div class="akn-citation" id="act__preamble__citations_1__cit_b">
+     <span class="akn-num">
+      b.
+     </span>
+     <p class="akn-p">
+      Ketetapan Majelis Permusyawaratan Rakyat Sementara Nomor 1 /MPRS/1960 dan Nomor II/MPRS/1960;
+     </p>
+    </div>
+    <div class="akn-citation" id="act__preamble__citations_1__cit_c">
+     <span class="akn-num">
+      c.
+     </span>
+     <p class="akn-p">
+      Undang-undang Nomor 10 Prp. tahun 1960 (Lembaran Negara tahun 1960 Nomor 31);
+     </p>
+    </div>
+   </section>
+   <div class="akn-container akn-container-name-approvalstatement" id="act__preamble__approval_1">
+    <p class="akn-p">
+     Dengan persetujuan Dewan Perwakilan Rakyat Gotong Royong;
+    </p>
+   </div>
+   <div class="akn-formula akn-formula-name-decision" id="act__preamble__formula_decision">
+    <p class="akn-p">
+     MEMUTUSKAN :
+    </p>
+   </div>
+   <div class="akn-container akn-container-name-revocation" id="act__preamble__revocation_1">
+    <span class="akn-num">
+     I.
+    </span>
+    <div class="akn-content">
+     <p class="akn-p">
+      Mencabut: Undang-undang Nomor 8 tahun 1951 tentang penangguhan pemberian izin kepada dokter dan dokter gigi dan segala peraturan yang bertentangan dengan Undang-undang ini (Lembaran Negara tahun 1951 Nomor 44);
+     </p>
+    </div>
+   </div>
+   <p class="akn-enactingformula akn-enactingformula-name-enactingformula" id="act__preamble__enactingFormula_1">
+    <span class="akn-num">
+     II.
+    </span>
+    <p class="akn-p">
+     Menetapkan:
+     <span class="akn-doctype akn-doctype-refersto-act">
+      UNDANG-UNDANG
+     </span>
+     TENTANG
+     <h2 class="akn-doctitle akn-doctitle-refersto-maintitle">
+      WAJIB KERJA SARJANA
+     </h2>
+     .
+    </p>
+   </p>
+  </header>
+  <main class="akn-body" id="act__body">
+   <section class="akn-article akn-pasal-numval-1" id="act__body__art_1">
+    <span class="akn-num">
+     Pasal 1
+    </span>
+    <div class="akn-content">
+     <div class="akn-paragraph akn-ayat" id="act__body__art_1__para_1">
+      <span class="akn-num">
+       (1)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Tiap warganegara, baik pria maupun wanita,
+       </p>
+       <ul class="akn-list" id="act__body__art_1__para_1__list_1">
+        <li class="akn-point" id="act__body__art_1__para_1__list_1__point_a">
+         <span class="akn-num">
+          a.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           yang memperoleh ijazah ujian penghabisan pada Perguruan Tinggi Negara;
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__body__art_1__para_1__list_1__point_b">
+         <span class="akn-num">
+          b.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           yang memperoleh ijazah ujian penghabisan pada Perguruan Tinggi Swasta, yang ditunjuk oleh Menteri yang diserahi urusan Perguruan tinggi,
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__body__art_1__para_1__list_1__point_c">
+         <span class="akn-num">
+          c.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           yang memperoleh ijazah ujian penghabisan pada Perguruan Tinggi diluar negeri, yang ditunjuk oleh Menteri yang diserahi urusan perguruan tinggi.
+          </p>
+         </div>
+        </li>
+       </ul>
+       <p class="akn-p">
+        Semuanya itu disebut sarjana, wajib bekerja pada Pemerintah atau pada perusahaan-perusahaan yang ditunjuk oleh Pemerintah sekurang-kurangnya selama tiga tahun berturut-turut.
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_1__para_2">
+      <span class="akn-num">
+       (2)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Dalam peraturan ini Akademi dikecualikan dari istilah Perguruan Tinggi.
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_1__para_3">
+      <span class="akn-num">
+       (3)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Bagi pendidikan tinggi Kedokteran, Kedokteran gigi, Kedokteran Hewan, Apoteker dan Akuntan ijazah ujian penghabisan yang termaksud pada ayat (1) ialah ijazah setelah lulus menempuh berturut-turut ujian-ujian dokter, dokter gigi, dokter hewan, apoteker dan akuntan.
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_1__para_4">
+      <span class="akn-num">
+       (4)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Sarjana yang telah lulus dalam ujian penghabisan tersebut dalam ayat (1) dan ayat (3) pasal ini yang sedang mempersiapkan thesis untuk memperoleh gelar ilmiah "Doktor" sementara dibebaskan dari wajib kerja, bila ada keterangan dari Presiden Universitas atau Pemimpin Sekolah Tinggi termaksud dalam pasal 5 ayat (1); wajib kerja ba wajib kerja bagi mereka ini mulai berlaku setelah mereka mencapai gelar "Doktor".
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_1__para_5">
+      <span class="akn-num">
+       (5)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Seorang sarjana yang telah berusia 50 tahun dapat dibebaskan dari kewajiban ini.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="akn-article akn-pasal-numval-2" id="act__body__art_2">
+    <span class="akn-num">
+     Pasal 2
+    </span>
+    <div class="akn-content">
+     <p class="akn-p">
+      Departemen yang diserahi urusan perguruan tinggi mengadakan daftar sarjana termaksud dalam pasal 1.
+     </p>
+    </div>
+   </section>
+   <section class="akn-article akn-pasal-numval-3" id="act__body__art_3">
+    <span class="akn-num">
+     Pasal 3
+    </span>
+    <div class="akn-content">
+     <div class="akn-paragraph akn-ayat" id="act__body__art_3__para_1">
+      <span class="akn-num">
+       (1)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Untuk Penempatan sarjana termaksud pada pasal 1 dibentuk Dewan Penempatan Sarjana yang berkedudukan langsung dibawah dan diketuai oleh Menteri Perburuhan.
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_3__para_2">
+      <span class="akn-num">
+       (2)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Dewan Penempatan Sarjana tersebut anggotanya, selain Menteri Perburuhan, terdiri atas wakil-wakil yang diberi kuasa penuh dari Menteri-Menteri:
+       </p>
+       <ul class="akn-list akn-list-type-alpha" id="act__body__art_3__para_2__list_1">
+        <li class="akn-point" id="act__body__art_3__para_2__list_1__point_a">
+         <span class="akn-num">
+          a.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           Pendidikan, Pengetahuan dan Kebudayaan,
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__body__art_3__para_2__list_1__point_b">
+         <span class="akn-num">
+          b.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           Perguruan Tinggi dan Ilmu Pengetahuan,
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__body__art_3__para_2__list_1__point_c">
+         <span class="akn-num">
+          c.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           Keamanan Nasional,
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__body__art_3__para_2__list_1__point_d">
+         <span class="akn-num">
+          d.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           Pembangunan,
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__body__art_3__para_2__list_1__point_e">
+         <span class="akn-num">
+          e.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           Produksi,
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__body__art_3__para_2__list_1__point_f">
+         <span class="akn-num">
+          f.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           Distribusi,
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__body__art_3__para_2__list_1__point_g">
+         <span class="akn-num">
+          g.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           Kesehatan,
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__body__art_3__para_2__list_1__point_h">
+         <span class="akn-num">
+          h.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           Agama.
+          </p>
+         </div>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="akn-article akn-pasal-numval-4" id="act__body__art_4">
+    <span class="akn-num">
+     Pasal 4
+    </span>
+    <div class="akn-content">
+     <p class="akn-p">
+      Wewenang, Tugas-kewajiban dan susunan Dewan Penempatan Sarjana ditetapkan dalam Peraturan Pemerintah.
+     </p>
+    </div>
+   </section>
+   <section class="akn-article akn-pasal-numval-5" id="act__body__art_5">
+    <span class="akn-num">
+     Pasal 5
+    </span>
+    <div class="akn-content">
+     <div class="akn-paragraph akn-ayat" id="act__body__art_5__para_1">
+      <span class="akn-num">
+       (1)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Presiden Universitas negara, Pemimpin sekolah tinggi negara, Presiden universitas swasta serta Pemimpin sekolah tinggi swasta yang ditunjuk oleh Menteri yang diserahi urusan perguruan tinggi, wajib memberitahukan kepada Departemen yang diserahi urusan perguruan tinggi tentang lulusnya seorang mahasiswa dalam waktu sebulan sesudah memperoleh ijazah ujian penghabisan.
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_5__para_2">
+      <span class="akn-num">
+       (2)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Lulusan termaksud dalam pasal 1 ayat (1) huruf a dan b dalam waktu sebulan memperoleh ijazah ujian penghabisan dan lulusan termaksud dalam pasal 1 ayat (1) huruf c dalam waktu sebulan setibanya di Indonesia, wajib menyampaikan secara tertulis kepada Departemen yang diserahi urusan perguruan tinggi keterangan-keterangan yang dimaksudkan pada ayat (1) pasal ini, disertai penjelasan yang dianggapnya perlu, agar penempatan mereka mungkin dilakukan sesuai dengan bakat dan kehendak masing-masing.
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_5__para_3">
+      <span class="akn-num">
+       (3)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Bila mereka sedang mempersiapkan thesis untuk mencapai gelar ilmiah "Doktor" maka keterangan itu harus disertai dengan surat keterangan dari Presiden Universitas atau pemimpin Sekolah Tinggi sebagai termaksud dalam pasal 1 ayat (4).
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_5__para_4">
+      <span class="akn-num">
+       (4)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Ketentuan yang bertalian dengan pendaftaran termaksud dalam ayat (1) dan (2) ditetapkan dalam Peraturan Pemerintah.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="akn-article akn-pasal-numval-6" id="act__body__art_6">
+    <span class="akn-num">
+     Pasal 6
+    </span>
+    <div class="akn-content">
+     <p class="akn-p">
+      Semua Departemen dan instansi-instansi lain yang tidak termasuk dalam lingkungan sesuatu Departemen, pada waktu tertentu memberitahukan kepada Departemen yang diserahi urusan perguruan tinggi dan Dewan Penempatan Sarjana, banyaknya sarjana yang bekerja padanya. Pada tiap permulaan tahun takwin diberitahukan pula banyaknya sarjana yang dibutuhkan dibubuhi keterangan-keterangan yang perlu.
+     </p>
+    </div>
+   </section>
+   <section class="akn-article akn-pasal-numval-7" id="act__body__art_7">
+    <span class="akn-num">
+     Pasal 7
+    </span>
+    <div class="akn-content">
+     <div class="akn-paragraph akn-ayat" id="act__body__art_7__para_1">
+      <span class="akn-num">
+       (1)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Pelanggaran pasal 5 ayat (2) dipidana dengan pidana selama-lamanya enam bulan atau didenda sebanyak-banyaknya sepuluh ribu rupiah,
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_7__para_2">
+      <span class="akn-num">
+       (2)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Barang siapa tidak memenuhi wajib-kerja selama tiga tahun berturut-turut pada masa, tempat dan dalam jabatan yang ditentukan oleh instansi Pemerintah yang berkuasa, dipidana dengan pidana kurungan selama-lamanya sembilan bulan atau didenda sebanyak-banyaknya seratus ribu rupiah.
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_7__para_3">
+      <span class="akn-num">
+       (3)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Barang siapa mempekerjakan seorang Sarjana yang belum memenuhi kewajibannya termaksud dalam pasal 5 ayat (2) dipidana dengan pidana kurungan selama-lamanya sembilan bulan atau didenda sebanyak-banyaknya seratus ribu rupiah.
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_7__para_4">
+      <span class="akn-num">
+       (4)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Ulangan dari pelanggaran termaksud pada ayat (2) dan (3) dipidana dengan pidana kurungan selama-lamanya satu tahun.
+       </p>
+      </div>
+     </div>
+     <div class="akn-paragraph akn-ayat" id="act__body__art_7__para_5">
+      <span class="akn-num">
+       (5)
+      </span>
+      <div class="akn-content">
+       <p class="akn-p">
+        Tindak pidana yang dimaksudkan pada ayat (1), (2), (3) dan (4) pasal ini dianggap sebagai pelanggaran.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="akn-article akn-pasal-numval-8" id="act__body__art_8">
+    <span class="akn-num">
+     Pasal 8
+    </span>
+    <div class="akn-content">
+     <p class="akn-p">
+      Pelaksanaan Undang-undang ini diserahkan kepada Menteri Perburuhan, dan Menteri Pendidikan, Pengetahuan dan Kebudayaan serta Menteri Perguruan Tinggi dan Ilmu Pengetahuan.
+     </p>
+    </div>
+   </section>
+   <section class="akn-article akn-pasal-numval-9" id="act__body__art_9">
+    <span class="akn-num">
+     Pasal 9
+    </span>
+    <div class="akn-content">
+     <p class="akn-p">
+      Undang-undang ini mulai berlaku pada hari diundangkan.
+     </p>
+    </div>
+   </section>
+   <div class="akn-container akn-container-name-promulgationcommand" id="act__body__promulgationCommand_1">
+    <p class="akn-p">
+     Agar setiap orang dapat mengetahuinya memerintahkan pengundangan Undang-undang ini dengan penempatan dalam Lembaran Negara Republik Indonesia.
+    </p>
+   </div>
+  </main>
+  <footer class="akn-conclusions" id="act__conclusions">
+   <div class="akn-container akn-container-name-signatureblock" id="act__conclusions__signatureBlock_1">
+    <div class="akn-container akn-container-name-placedateofsignature" id="act__conclusions__signatureBlock_1__placeDate">
+     <p class="akn-p">
+      Disahkan di Jakarta
+     </p>
+     <p class="akn-p">
+      pada tanggal 29 April 1961.
+     </p>
+    </div>
+    <div class="akn-signature" id="act__conclusions__signatureBlock_1__signature_1">
+     <p class="akn-role akn-role-refersto-presidenri">
+      Pejabat Presiden Republik Indonesia,
+     </p>
+     <p class="akn-person akn-person-refersto-djuanda">
+      DJUANDA
+     </p>
+    </div>
+   </div>
+   <div class="akn-container akn-container-name-promulgationblock" id="act__conclusions__promulgationBlock_1">
+    <div class="akn-container akn-container-name-placedateofpromulgation" id="act__conclusions__promulgationBlock_1__placeDate">
+     <p class="akn-p">
+      Diundangkan di Jakarta
+     </p>
+     <p class="akn-p">
+      pada tanggal 29 April 1961.
+     </p>
+    </div>
+    <div class="akn-signature" id="act__conclusions__promulgationBlock_1__signature_1">
+     <p class="akn-role akn-role-refersto-pejabatsekretarisnegara">
+      Pejabat Sekretaris Negara,
+     </p>
+     <p class="akn-person akn-person-refersto-santoso">
+      SANTOSO
+     </p>
+    </div>
+   </div>
+  </footer>
+  <aside class="akn-attachments" id="act__attachments">
+   <section class="akn-attachment akn-attachment-type-elucidation" id="act__elucidation_1">
+    <header class="akn-preface" id="act__elucidation_1__preface">
+     <h2 class="akn-doctitle" id="act__elucidation_1__preface__title_1">
+      PENJELASAN ATAS UNDANG-UNDANG NOMOR 8 TAHUN 1961 TENTANG WAJIB KERJA SARJANA
+     </h2>
+    </header>
+    <main class="akn-body" id="act__elucidation_1__body">
+     <div class="akn-container akn-container-name-generalexplanation" id="act__elucidation_1__body__elucGeneral_1">
+      <h3 class="akn-heading">
+       PENJELASAN UMUM
+      </h3>
+      <div class="akn-content">
+       <p class="akn-p">
+        Telah lama Pemerintah mengalami kekurangan akan tenaga sarjana, yaitu para lulusan perguruan tinggi, kecuali akademi, sehingga kerap kali mengakibatkan kurang lancarnya jalannya roda Pemerintah. Hal ini akan lebih dirasakan dalam masa pembangunan nasional semesta berencana sejalan dengan pelaksanaan garis-garis besar pola pembangunan yang telah ditetapkan oleh Majelis Permusyawaratan Rakyat Sementara. Untuk mengatasi kesulitan yang menghambat Pembangunan Negara ini, disamping mengadakan penghargaan kebendaan yang setepat-tepatnya atas tenaga sarjana, Pemerintah perlu mengatur penggunaan tenaga sarjana yang sesuai dengan jurusannya dengan jalan wajib-kerja pada Pemerintah atau Badan-badan swasta yang ditunjuk oleh Pemerintah. kerja karena sesuatu ikatan dinas, yang dilakukan sesudah habisnya wajib kerja menurut peraturan ini.
+       </p>
+      </div>
+      <p class="akn-p">
+       Bahwa pelaksanaan kewajiban kerja sarjana berdasarkan Undang-Undang ini lebih diperlukan khususnya dalam masa peralihan yaitu masa pelaksanaan Manifesto Politik Republik Indonesia tanggal 17 Agustus 1959. Seorang sarjana yang baru lulus dari ujian penghabisan dalam tempo sebulan harus mendaftarkan diri pada Departemen yang diserahi Urusan perguruan tinggi yang meneruskan daftar itu kepada Dewan Penempatan Sarjana. Penempatan itu seberapa dapat akan disesuaikan dengan bakat dan kehendak orang yang mendaftarkan.
+      </p>
+      <p class="akn-p">
+       Perlu dikemukakan, bahwa undang-undang ini mencabut Undang-Undang Nomor 8 tahun 1951 tentang penangguhan pemberian surat ijin untuk berpraktek sebagai doktor atau doktor gigi, karena maksudnya sudah ditampung dan disempurnakan oleh Peraturan ini. Yang dimaksud dengan peraturan lain ialah peraturan-peraturan mengenai wajib kerja sarjana, misalnya, Peraturan Penguasa Militer Tertinggi Nomor 1132/PMT/1957, selain Peraturan-peraturan yang bertalian dengan wajib Militer.
+      </p>
+      <p class="akn-p">
+       Akhirnya sebagai tambahan perlu dicatat di sini, bahwa undang-undang ini tidak mengurangi wajib
+      </p>
+     </div>
+     <div class="akn-container akn-container-name-articlebyarticleexplanation" id="act__elucidation_1__body__elucArtByArt_1">
+      <h3 class="akn-heading">
+       PASAL DEMI PASAL
+      </h3>
+      <div class="akn-clause akn-clause-refersto-act__body__art_1" id="act__elucidation_1__body__elucArtByArt_1__art_1">
+       <h3 class="akn-heading">
+        Pasal 1
+       </h3>
+       <p class="akn-p">
+        Tiap sarjana warganegara Indonesia wajib bekerja pada negara sekurang-kurangnya selama tiga tahun berturut-turut. Sarjana bangsa Asing dibebaskan dari kewajiban bekerja ini. Ijazah yang diperoleh dari Perguruan Tinggi luar negeri tingkat baccalaureate yang telah dihargai sama dengan ijazah Sarjana di Indonesia termasuk dalam pengertian sarjana menurut Peraturan ini (misalnya B.Sc. dari Perguruan Tinggi di Canada dan Australia).
+       </p>
+       <p class="akn-p">
+        Para lulusan akademi tidak setingkat dengan sarjana, karena itu mereka dikecualikan. Mereka yang sudah menempuh ujian sarjana dinamakan sarjana, akan tetapi bagi pendidikan tinggi Kedokteran, Kedokteran gigi, Kedokteran hewan, Apoteker dan Akuntan, ujian sarjana belum merupakan ujian penghabisan. Ujian penghabisan bagi mereka adalah ujian dokter, dokter gigi, dokter hewan, apoteker dan akuntan, sehingga yang terkena wajib kerja adalah para dokter, dokter gigi, dokter hewan, apoteker dan akuntan yang baru lulus.
+       </p>
+       <p class="akn-p">
+        Pembebasan sementara dari seorang sarjana yang sedang menulis atau sedang mempersiapkan thesis untuk mencapai gelar ilmiah "Doktor", dimaksud untuk memberi kesempatan memajukan ilmu pengetahuan di Indonesia. Waktu pembebasan itu selama-lamanya 3 tahun.
+       </p>
+      </div>
+      <div class="akn-clause akn-clause-refersto-act__body__art_2 act__body__art_3" id="act__elucidation_1__body__elucArtByArt_1__art_2-3">
+       <h3 class="akn-heading">
+        Pasal 2 dan Pasal 3
+       </h3>
+       <p class="akn-p">
+        Cukup jelas.
+       </p>
+      </div>
+      <div class="akn-clause akn-clause-refersto-act__body__art_4" id="act__elucidation_1__body__elucArtByArt_1__art_4">
+       <h3 class="akn-heading">
+        Pasal 4
+       </h3>
+       <p class="akn-p">
+        Dalam perkataan wewenang meliputi ketentuan tentang dasar pembagian penempatan sarjana dalam badan-badan baik yang dimiliki, dikuasai atau diawasi oleh Pemerintah.
+       </p>
+       <p class="akn-p">
+        Dasar penempatan bagi sarjana wanita dapat diperhatikan sifat kodrat wanita.
+       </p>
+       <p class="akn-p">
+        Sejalan dengan realisasi Pembangunan Semesta, prioritas penempatan sarjana itu diatur selaras dengan pelaksanaan pembangunan tersebut di atas, dengan urutan sebagai berikut:
+       </p>
+       <ul class="akn-list akn-list-type-alpha" id="act__elucidation_1__body__elucArtByArt_1__art_4__list_1">
+        <li class="akn-point" id="act__elucidation_1__body__elucArtByArt_1__art_4__list_1__point_a">
+         <span class="akn-num">
+          a.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           bidang ekonomi, pendidikan dan penelitian.
+          </p>
+         </div>
+        </li>
+        <li class="akn-point" id="act__elucidation_1__body__elucArtByArt_1__art_4__list_1__point_b">
+         <span class="akn-num">
+          b.
+         </span>
+         <div class="akn-content">
+          <p class="akn-p">
+           Dalam bidang Perusahaan diutamakan Perusahaan Negara atau yang dikuasai oleh negara, dalam hal ini tanpa melalaikan kepentingan Swasta.
+          </p>
+         </div>
+        </li>
+       </ul>
+      </div>
+      <div class="akn-clause akn-clause-refersto-act__body__art_5 act__body__art_6" id="act__elucidation_1__body__elucArtByArt_1__art_5-6">
+       <h3 class="akn-heading">
+        Pasal 5 dan Pasal 6
+       </h3>
+       <p class="akn-p">
+        Cukup jelas.
+       </p>
+      </div>
+      <div class="akn-clause akn-clause-refersto-act__body__art_7" id="act__elucidation_1__body__elucArtByArt_1__art_7">
+       <h3 class="akn-heading">
+        Pasal 7
+       </h3>
+       <p class="akn-p">
+        Maksimum denda di sini sengaja dipertinggi untuk menjaga jangan sampai pewajib kerja ingkar dari masa tiga tahun.
+       </p>
+       <p class="akn-p">
+        Dengan adanya hanya ancaman pidana kurungan saja, maka pelanggaran berulang diharapkan banyak dapat dihindarkan.
+       </p>
+       <p class="akn-p">
+        Ancaman hukum bagi, penerima sarjana termaksud pada ayat 3 hanya berlaku untuk penerimaan sarjana (untuk dipekerjakan) yang belum mendaftarkan dan tidak berlaku lagi yang telah mendaftarkan tetapi belum ditempatkan.
+       </p>
+      </div>
+      <div class="akn-clause akn-clause-refersto-act__body__art_8" id="act__elucidation_1__body__elucArtByArt_1__art_8">
+       <h3 class="akn-heading">
+        Pasal 8
+       </h3>
+       <p class="akn-p">
+        Cukup jelas.
+       </p>
+      </div>
+      <div class="akn-clause akn-clause-refersto-act__body__art_9" id="act__elucidation_1__body__elucArtByArt_1__art_9">
+       <h3 class="akn-heading">
+        Pasal 9
+       </h3>
+       <p class="akn-p">
+        Pada asasnya semua sarjana sejak diundangkannya Undang-undang ini dikenakan wajib kerja sarjana. Dengan sendirinya termasuk juga sarjana-sarjana lulusan sebelum Undang-undang ini berlaku. Demi keadilan pelaksanaannya diselaraskan dengan kewajiban kerja para dokter dan dokter gigi sebelum undang-undang berlaku.
+       </p>
+      </div>
+     </div>
+    </main>
+   </section>
+  </aside>
+ </article>
+</div>

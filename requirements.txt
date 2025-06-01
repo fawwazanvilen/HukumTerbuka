@@ -15,3 +15,4 @@ weave
 pymongo>=4.0.0
 motor>=3.0.0
 lxml
+bs4
