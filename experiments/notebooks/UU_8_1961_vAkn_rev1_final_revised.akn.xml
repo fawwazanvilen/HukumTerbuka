@@ -1,0 +1,390 @@
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+  <ACT eId="ACT" name="indonesianAct">
+    <meta eId="ACT__meta">
+      <identification eId="ACT__meta__identification" source="#sourceSystem">
+        <FRBRWork eId="ACT__meta__identification__work">
+          <FRBRthis value="/akn/id/ACT/1961/8/main"/>
+          <FRBRuri value="/akn/id/ACT/1961/8"/>
+          <FRBRdate date="1961-01-01" name="creation"/>
+          <FRBRauthor href="#system" as_="#author"/>
+          <FRBRcountry value="id"/>
+          <FRBRname value="WAJIB KERJA SARJANA"/>
+          <FRBRnumber value="8"/>
+        </FRBRWork>
+        <FRBRManifestation eId="ACT__meta__identification__manifestation">
+          <FRBRthis value="/akn/id/ACT/1961/8/id@main.xml"/>
+          <FRBRuri value="/akn/id/ACT/1961/8/id.xml"/>
+          <FRBRdate date="2025-06-01" name="publication"/>
+          <FRBRformat value="application/akn+xml"/>
+        </FRBRManifestation>
+      </identification>
+    </meta>
+    <preamble eId="ACT__preamble"/>
+    <body eId="ACT__body"/>
+    <conclusions eId="ACT__conclusions"/>
+    <attachments eId="ACT__attachments">
+      <attachment eId="ACT__attachments__elucidation_1" type="elucidation">
+        <preface eId="ACT__attachments__elucidation_1__preface">
+          <p>LEMBARAN NEGARA REPUBLIK INDONESIA TAHUN 1961 NOMOR 207</p>
+          <p>PENJELASAN</p>
+          <p>ATAS</p>
+          <p>UNDANG-UNDANG NOMOR 8 TAHUN 1961</p>
+          <p>TENTANG</p>
+          <p>WAJIB KERJA SARJANA.</p>
+        </preface>
+        <body eId="ACT__attachments__elucidation_1__body">
+          <container eId="ACT__attachments__elucidation_1__body__general_1" name="generalExplanation">
+            <heading>PENJELASAN UMUM.</heading>
+            <p eId="ACT__attachments__elucidation_1__body__general_1__p_1">Telah lamaPemerintah mengalami kekurangan akan tenaga sarjana, yaitu para lulusan perguruan tinggi, kecuali akademi, sehingga kerap kali mengakibatkan kurang lancarnya jalannya roda Pemerintah. Hal ini akan lebih dirasakan dalam masa pembangunan nasional semesta berencana sejalan dengan pelaksanaan garis-garis besar pola pembangunan yang telah ditetapkan oleh Majelis Permusyawaratan Rakyat Sementara. Untuk mengatasi kesulitan yang menghambat Pembangunan Negara ini, disamping mengadakan penghargaan kebendaan yang setepat-tepatnya atas tenaga sarjana, Pemerintah perlu mengatur penggunaan tenaga sarjana yang sesuai dengan jurusannya dengan jalan wajib-kerja pada Pemerintah atau Badan-badan swasta yang ditunjuk oleh Pemerintah.</p>
+            <p eId="ACT__attachments__elucidation_1__body__general_1__p_2">Bahwa pelaksanaan kewajiban kerja sarjana berdasarkan Undang-undang ini lebih diperlukan khususnya dalam masa peralihan yaitu masa pelaksanaan Manifesto Politik Republik Indonesia tanggal 17 Agustus 1959. Seorang sarjana yang baru lulus dari ujian penghabisan dalam tempo sebulan harus mendaftarkandiri pada Departemen yang diserahi Urusan perguruan tinggi yang meneruskan daftar itu kepada Dewan Penempatan Sarjana. Penempatan itu seberapa dapat akan disesuaikan dengan bakat dan kehendak orang yang mendaftarkan.</p>
+            <p eId="ACT__attachments__elucidation_1__body__general_1__p_3">Perlu dikemukakan, bahwa undang-undangini mencabut Undang-undang Nomor 8 tahun 1951 tentang penangguhan pemberian surat ijin untuk berpraktek sebagai doktor atau doktor gigi, karena maksudnya sudah ditampung dan disempurnakan oleh Peraturan ini. Yang maksud dengan peraturan lain ialah peraturan-peraturan mengenai wajib kerja sarjana,misalnya, Peraturan Penguasa MiliterTertinggi Nomor 1132/PMT/1957, selain Peraturan-peraturan yang bertalian dengan wajib Militer. Akhirnya sebagai tambahan perlu dicatat disini, bahwa undang-undang ini tidak mengurangi wajib ditampung   dan   disempurnakan   oleh
+Peraturan ini. Yang maksud dengan peraturan lain ialah peraturan-peraturan mengenai
+wajib    kerja    sarjana,misalnya,    Peraturan    Penguasa    MiliterTertinggi    Nomor
+1132/PMT/1957, selain Peraturan-peraturan yang bertalian dengan wajib Militer.
+Akhirnya  sebagai  tambahan  perlu  dicatat  disini,  bahwa  undang-undang  ini  tidak
+mengurangi wajib kerja karena sesuatu ikatan dinas, yang dilakukan sesudah habisanya
+wajib kerja menurut peraturan ini.</p>
+          </container>
+          <container eId="ACT__attachments__elucidation_1__body__artbyart_1" name="articleByArticleExplanation">
+            <heading>PENJELASAN PASAL DEMI PASAL.</heading>
+            <clause eId="ACT__attachments__elucidation_1__body__artbyart_1__art_1" refersTo="#body__art_1">
+              <heading>Pasal 1.</heading>
+              <p>Tiap sarjana warganegara Indonesia wajib bekerja pada negara sekurang-kurangnnya selama tiga tahun berturut-turut . Sarjana bangsa Asing dibebaskan dari kewajiban bekerja ini.</p>
+              <p>Ijazah yang diperoleh dari Perguruan Tinggi luar negeri tingkat Baccalaureat yang telah dihargai sama dengan ijazah Sarjana di Indonesia termasuk dalam pengertian sarjana menurut Peraturan ini (misalnya B.Sc. dari Perguruan Tinggi di Canada dan Australia).</p>
+              <p>Para lulusan akadmi tidak setingkat dengan sarjana, karena itu mereka dikecualikan. Mereka yang sudah menempuh ujian sarjana dinamakan sarjana, akan tetapi bagi pendidikan tinggi Kedokteran, kedokteran gigi, Kedokteran hewan, Apoteker dan Akuntan, ujian sarjana belum merupakan ujian penghabisan Ujian penghabisan bagi mereka adalah ujian dokter, dokter gigi, dokter hewan, apoteker dan akuntan, sehingga yang terkena wajib kerja adalah para dokter, dokter gigi, dokter hewan, apoteker dan akuntan yang baru lulus.</p>
+              <p>Pembebasan sementara dari seorang sarjana yang sedang menulis atau sedang mempersiapkan thesis untuk mencapai gelar ilmiah "Doktor", dimaksud untuk memberi kesempatan memajukan ilmupengetahuan di Indonesia. waktu pembebasan itu selama-lamanya 3 tahun.</p>
+            </clause>
+            <clause eId="ACT__attachments__elucidation_1__body__artbyart_1__art_2-3" refersTo="#body__art_2 #body__art_3">
+              <heading>Pasal 2 dan 3.</heading>
+              <p>Cukup jelas.</p>
+            </clause>
+            <clause eId="ACT__attachments__elucidation_1__body__artbyart_1__art_4" refersTo="#body__art_4">
+              <heading>Pasal 4.</heading>
+              <p>Dalam perkataan wewenang meliputi ketentuan tentang dasar pembagian penempatan sarjana dalam badan-badan baik yang dimiliki, dikuasai atau diawasi oleh Pemerintah.</p>
+              <p>Dasar penempatan bagi sarjana wanita dapat diperhatikan sifat kodrat wanita.</p>
+              <p>Sejalan dengan realisasi Pembangunan Semsta, prioritetpenempatan sarjana itu diatur selaras dengan pelaksanaan pembangunan tersebut diatas, dengan urutan sebagai berikut:</p>
+              <list eId="ACT__attachments__elucidation_1__body__artbyart_1__art_4__list_1" type="alpha">
+                <point eId="ACT__attachments__elucidation_1__body__artbyart_1__art_4__list_1__point_a">
+                  <num>a.</num>
+                  <content>
+                    <p>bidang ekonomi, pendidikan dan penelitian.</p>
+                  </content>
+                </point>
+                <point eId="ACT__attachments__elucidation_1__body__artbyart_1__art_4__list_1__point_b">
+                  <num>b.</num>
+                  <content>
+                    <p>Dalam bidang Perusahaan diutamakan Perusahaan Negara atauyang dikuasai oleh negara, dalam hal ini tanpa melalaikan ke</p>
+                  </content>
+                </point>
+              </list>
+            </clause>
+            <clause eId="ACT__attachments__elucidation_1__body__artbyart_1__art_5-6" refersTo="#body__art_5 #body__art_6">
+              <heading>Pasal 5 dan 6.</heading>
+              <p>Cukup jelas.</p>
+            </clause>
+            <clause eId="ACT__attachments__elucidation_1__body__artbyart_1__art_7" refersTo="#body__art_7">
+              <heading>Pasal 7.</heading>
+              <p>Maksimum denda disini sengaja dipertinggi untuk menjaga jangan sampai pewajib kerja ingkar dari masa tiga tahun.</p>
+              <p>Dengan adanya hanya ancaman pidana kurungan saja, maka pelanggaran ulangan diharapkan banyak dapat dihindarkan.</p>
+              <p>Ancaman hukum bagi, penerima sarjana termaksud pada ayat 3 hanya berlaku untuk penerimaan sarja (untuk dipekerjakan) yang belum mendaftarkan dantidak berlaku lagi yang telah mendaftarkan tetapi belum ditempatkan.</p>
+            </clause>
+            <clause eId="ACT__attachments__elucidation_1__body__artbyart_1__art_8" refersTo="#body__art_8">
+              <heading>Pasal 8.</heading>
+              <p>Cukup jelas.</p>
+            </clause>
+            <clause eId="ACT__attachments__elucidation_1__body__artbyart_1__art_9" refersTo="#body__art_9">
+              <heading>Pasal 9.</heading>
+              <p>Pada asasnya semua sarjana sejak diundangkannya undang-undang ini dikenakan wajib kerja sarjana. Dengan sendirinya termasuk juga sarjana-sarjana lulusan sebelum Undang-undang ini berlaku. Demi keadilan pelaksanaannya diselaraskan dengan kewajiban kerja para dokter dan dokter gigi sebelum undang-undang berlaku.</p>
+            </clause>
+          </container>
+        </body>
+      </attachment>
+    </attachments>
+    <preamble eId="preamble">
+      <docTitle eId="preamble__docTitle_1">PRESIDEN REPUBLIK INDONESIA,</docTitle>
+      <recitals eId="preamble__recitals_1">
+        <p>Menimbang:</p>
+        <recital eId="preamble__recitals_1__rec_a">
+          <num>a.</num>
+          <p>bahwa ilmu dan keahlian azasnya untuk mengabdi kepada tanah air, karenanya perlu dikembangkan dan dilaksanakan.</p>
+        </recital>
+        <recital eId="preamble__recitals_1__rec_b">
+          <num>b.</num>
+          <p>bahwa dalam rangka pembangunan nasional semesta berencana sangat diperlukan tenaga sarjana dari perbagai jurusan;</p>
+        </recital>
+        <recital eId="preamble__recitals_1__rec_c">
+          <num>c.</num>
+          <p>bahwa agar penempatan dan penggunaan tenaga sarjana tersebut teratur dan merata maka perlu diadakan peraturan wajib kerja sarjana;</p>
+        </recital>
+      </recitals>
+      <citations eId="preamble__citations_1">
+        <p>Mengingat:</p>
+        <citation eId="preamble__citations_1__cit_a">
+          <num>a.</num>
+          <p>Pasal 5 ayat (1) jo. pasal 20 ayat (1) dan pasal 27 ayat (2) Undang-undang Dasar;</p>
+        </citation>
+        <citation eId="preamble__citations_1__cit_b">
+          <num>b.</num>
+          <p>Ketetapan Majelis Permusyawaratan Rakyat Sementara Nomor 1 /MPRS/1960 dan Nomor II/MPRS/1960;</p>
+        </citation>
+        <citation eId="preamble__citations_1__cit_c">
+          <num>c.</num>
+          <p>Undang-undang Nomor 10 Prp. tahun 1960 (Lembaran-Negara tahun 1960 Nomor 31);</p>
+        </citation>
+      </citations>
+      <container name="approvalStatement" eId="preamble__approval_1">
+        <p>Dengan persetujuan Dewan Perwakilan Rakyat Gotong Royong;</p>
+      </container>
+      <formula name="decision" eId="preamble__formula_decision">
+        <p>MEMUTUSKAN :</p>
+      </formula>
+      <container name="revocation" eId="preamble__revocation_1">
+        <num>I.</num>
+        <p>Mencabut:Undang-undang Nomor 8 tahun 1951 tentang penangguhan pemberian izin kepada dokter dan dokter gigi dan segala peraturanyangbertentangandenganUndang-undangini (Lembaran-Negara tahun 1951 Nomor 44);</p>
+      </container>
+      <enactingFormula eId="preamble__enactingformula_1" name="enactingFormula">
+        <num>II.</num>
+        <p>Menetapkan:<docType refersTo="#indonesianAct">UNDANG-UNDANG</docType>TENTANG <docTitle refersTo="#mainTitle">WAJIB KERJA SARJANA</docTitle>.</p>
+      </enactingFormula>
+    </preamble>
+    <body eId="body">
+      <article eId="body__art_1">
+        <num>Pasal 1.</num>
+        <content>
+          <paragraph eId="body__art_1__para_1">
+            <num>(1)</num>
+            <content>
+              <p>Tiap warganegara, baik pria maupun wanita,</p>
+              <list eId="body__art_1__para_1__list_1" type="alpha">
+                <point eId="body__art_1__para_1__list_1__point_a">
+                  <num>a.</num>
+                  <content>
+                    <p>yang memperoleh ijazah ujian penghabisan pada Perguruan Tinggi Negara;</p>
+                  </content>
+                </point>
+                <point eId="body__art_1__para_1__list_1__point_b">
+                  <num>b.</num>
+                  <content>
+                    <p>yang memperoleh ijazah ujian penghabisan pada Perguruan Tinggi Swasta, yang ditunjuk oleh Menteri yang diserahi urusan Perguruan tinggi,</p>
+                  </content>
+                </point>
+                <point eId="body__art_1__para_1__list_1__point_c">
+                  <num>c.</num>
+                  <content>
+                    <p>yang memperoleh ijazah ujian penghabisan pada Perguruan Tinggi diluar negeri, yang ditunjuk oleh Menteri yang diserahi urusan perguruan tinggi.</p>
+                  </content>
+                </point>
+              </list>
+              <p>Semuanya itu disebut sarjana, wajib bekerja pada Pemerintah atau pada perusahaan-perusahaan yang ditunjuk oleh Pemerintah sekurang-kurangnya selama tiga tahun berturut-turut .</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_1__para_2">
+            <num>(2)</num>
+            <content>
+              <p>Dalam peraturan ini Akademi dikecualikan dari istilah Perguruan Tinggi.</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_1__para_3">
+            <num>(3)</num>
+            <content>
+              <p>Bagi pendidikan tinggi Kedokteran, Kedokteran gigi, Kedokteran Hewan, Apoteker dan Akuntan ijazah ujian penghabisan yang termaksud pada ayat (1) ialah ijazah setelah lulus menempuh berturut-turut ujian-ujian dokter, dokter gigi, dokter hewan, apoteker dan akuntan.</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_1__para_4">Sarjana yang telah lulus dalam ujian penghabisantersebut dalam ayat (1) dan ayat (3) pasal ini yang sedang mempersiapkan thesis untuk memperoleh gelar ilmiah "Doktor" sementara dibebaskan dari wajib kerja, bila ada keterangan dari Presiden Universitas atau Pemimpin Sekolah Tinggi termaksud dalam pasal 5 ayat (1); wajib kerja bagi mereka ini mulai berlaku setelah mereka mencapai gelar "Doktor".</paragraph>
+          <paragraph eId="body__art_1__para_5">
+            <num>(5)</num>
+            <content>
+              <p>Seorang sarjana yang telah berusia 50 tahun dapat dibebaskan dari kewajiban ini.</p>
+            </content>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="body__art_2" num="2">
+        <num>Pasal 2.</num>
+        <content>
+          <p>Departemen yang diserahi urusan perguruan tinggi mengadakan daftar sarjana termaksud dalam pasal 1.</p>
+        </content>
+      </article>
+      <article eId="body__art_3" num="3">
+        <num>Pasal 3.</num>
+        <content>
+          <paragraph eId="body__art_3__para_1">
+            <num>(1)</num>
+            <content>
+              <p>Untuk Penempatan sarjana termaksud pada pasal 1 dibentuk Dewan Penempatan Sarjana yang berkedudukan langsung dibawah dan diketuai oleh Menteri Perburuhan.</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_3__para_2">
+            <num>(2)</num>
+            <content>
+              <p>Dewan Penempatan Sarjana tersebut anggotanya, selain Menteri Perburuhan, terdiri atas wakil-wakil yang diberi kuasa penuh dari Menteri-Menteri:</p>
+              <list eId="body__art_3__para_2__list_1" type="alpha">
+                <point eId="body__art_3__para_2__list_1__point_a">
+                  <num>a.</num>
+                  <content>
+                    <p>Pendidikan, Pengetahuan dan Kebudayaan,</p>
+                  </content>
+                </point>
+                <point eId="body__art_3__para_2__list_1__point_b">
+                  <num>b.</num>
+                  <content>
+                    <p>Perguruan Tinggi dan Ilmu Pengetahuan,</p>
+                  </content>
+                </point>
+                <point eId="body__art_3__para_2__list_1__point_c">
+                  <num>c.</num>
+                  <content>
+                    <p>Keamanan Nasional,</p>
+                  </content>
+                </point>
+                <point eId="body__art_3__para_2__list_1__point_d">
+                  <num>d.</num>
+                  <content>
+                    <p>Pembangunan,</p>
+                  </content>
+                </point>
+                <point eId="body__art_3__para_2__list_1__point_e">
+                  <num>e.</num>
+                  <content>
+                    <p>Produksi,</p>
+                  </content>
+                </point>
+                <point eId="body__art_3__para_2__list_1__point_f">
+                  <num>f.</num>
+                  <content>
+                    <p>Distribusi,</p>
+                  </content>
+                </point>
+                <point eId="body__art_3__para_2__list_1__point_g">
+                  <num>g.</num>
+                  <content>
+                    <p>Kesehatan,</p>
+                  </content>
+                </point>
+                <point eId="body__art_3__para_2__list_1__point_h">
+                  <num>h.</num>
+                  <content>
+                    <p>Agama.</p>
+                  </content>
+                </point>
+              </list>
+            </content>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="body__art_4" num="4">
+        <num>Pasal 4.</num>
+        <content>
+          <p>Wewenang , Tugas-kewajiban dan susunan Dewan Penempatan Sarjana ditetapkan dalam Peraturan Pemerintah.</p>
+        </content>
+      </article>
+      <article eId="body__art_5" num="5">
+        <num>Pasal 5.</num>
+        <content>
+          <paragraph eId="body__art_5__para_1">
+            <num>(1)</num>
+            <content>
+              <p>Presiden Universitas negara, Pemimpin sekolah tinggi negara, Presiden universitas swasta serta Pemimpin sekolah tinggi swasta yang ditunjuk oleh Menteri yang diserahi urusan perguruan tinggi, wajib memberitahukan kepada Departemen yang diserahi urusan perguruan tinggi tentang lulusnya seorang mahasiswa dalam waktu sebulan sesudah memperoleh ijazah ujian penghabisan.</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_5__para_2">
+            <num>(2)</num>
+            <content>
+              <p>Lulusantermaksud dalam pasal 1 ayat (1) huruf a dan b dalam waktu sebulan memperoleh ijazah ujian penghabisan dan lulusan termaksud dalam pasal 1 ayat (1) huruf c dalam waktu sebulansetibanya di Indonesia, wajib menyampaikan secara tertulis kepada Departemen yang diserahi urusan perguruan tinggi keterangan-keterangan yang dimaksudkan pada ayat (1) pasal ini, disertai penjelasan yang dianggapnya perlu, agar penempatan mereka mungkin dilakukan sesuai dengan bakat dan kehendak masing-masing.</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_5__para_3">
+            <num>(3)</num>
+            <content>
+              <p>Bila mereka sedang mempersiapkan thesis untuk mencapai gelar ilmiah "Doktor" maka keterangan itu harus disertai dengan surat keterangan dari Presiden Universitas atau pemimpin Sekolah Tinggi sebagai termaksud dalam pasal 1 ayat</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_5__para_4" num="(4)">
+            <num>(4)</num>
+            <content>
+              <p>Ketentuan yang bertalian dengan pendaftaran termaksud dalam ayat (1) dan (2) ditetapkan dalam Peratuaran Pemerintah.</p>
+            </content>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="body__art_6" num="6">
+        <num>Pasal 6.</num>
+        <content>
+          <p>Semua Departemen dan instansi-instansi lain yang tidak termasuk dalam lingkungan sesuatu Departemen, pada waktu tertentu memberitahukan kepada Departemen yang diserahi urusan perguruan tinggi dan Dewan Penempatan Sarjana, banyaknya sarjana yang bekerja padanya. Pada tiap permulaan tahun takwin diberitahukan pula banyaknya sarjana yang dibutuhkan dibubuhi keterangan-keterangan yang perlu.</p>
+        </content>
+      </article>
+      <article eId="body__art_7" num="7">
+        <num>Pasal 7.</num>
+        <content>
+          <paragraph eId="body__art_7__para_1" num="(1)">
+            <num>(1)</num>
+            <content>
+              <p>Pelanggaran pasal 5 ayat (2) dipidana dengan pidana selama-lamanya enam bulan atau didenda sebanyak-banyaknya sepuluh ribu rupiah,</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_7__para_2" num="(2)">
+            <num>(2)</num>
+            <content>
+              <p>Barang siapa tidak memenuhi wajib-kerja selama tiga tahunberturut-turut pada masa, tempat dan dalam jabatan yang ditentukan oleh instansi Pemerintah yang berkuasa, dipidana dengan pidana kurungan selama-lamanya sembilan bulan atau didenda sebanyak-banyaknya seratus ribu rupiah.</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_7__para_3" num="(3)">
+            <num>(3)</num>
+            <content>
+              <p>BarangsiapamempekerjakanseorangSarjanayangbelummemenuhi kewajibannya termaksud dalam pasal 5 ayat (2) dipidana dengan pidana kurungan selama-lamanyasembilan bulan atau didenda sebanyak-banyaknya seratus ribu rupiah.</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_7__para_4" num="(4)">
+            <num>(4)</num>
+            <content>
+              <p>Ulangan dari pelanggaran termaksud pada ayat (2) dan (3) dipidana dengan pidana kurungan selama-lamanya satu tahun.</p>
+            </content>
+          </paragraph>
+          <paragraph eId="body__art_7__para_5" num="(5)">
+            <num>(5)</num>
+            <content>
+              <p>Tindak pidana yang dimaksudkan pada ayat (1), (2), (3) dan (4) pasal ini dianggap sebagai pelanggaran.</p>
+            </content>
+          </paragraph>
+        </content>
+      </article>
+      <article eId="body__art_8" num="8">
+        <num>Pasal 8.</num>
+        <content>
+          <p>Pelaksanaan Undang-undang ini diserahkan kepada Menteri Perburuhan, dan Menteri Pendidikan, Pengetahuan dan Kebudayaan serta Menteri Perguruan Tinggi dan Ilmu Pengetahuan.</p>
+        </content>
+      </article>
+      <article eId="body__art_9" num="9">
+        <num>Pasal 9.</num>
+        <content>
+          <p>Undang-undang ini mulai berlaku pada hari diundangkan.</p>
+        </content>
+      </article>
+      <container name="promulgationCommand" eId="body__promulgation_1">
+        <p>Agar supaya setiaporang dapat mengetahuinya memerintahkan pengundangan Undang-undang ini dengan penempatan dalam Lembaran Negara Republik Indonesia.</p>
+      </container>
+      <conclusions eId="conclusions">
+        <container name="placeDateOfSignature" eId="conclusions__sigblock_1__placedate_1">
+          <p>Disahkan di Jakarta</p>
+          <p>pada tanggal 29 April 1961.</p>
+        </container>
+        <container name="signatureBlock" eId="conclusions__sigblock_1">
+          <signature eId="conclusions__sigblock_1__signature_1">
+            <role refersTo="#presidenRI">Pejabat Presiden Republik Indonesia,</role>
+            <person refersTo="#djuanda">DJUANDA</person>
+          </signature>
+        </container>
+        <container name="promulgationSignatureBlock" eId="conclusions__promulgation_1">
+          <container name="placeDateOfPromulgation" eId="conclusions__promulgation_1__placedate_1">
+            <p>Diundangkan di Jakarta</p>
+            <p>pada tanggal 29 April 1961.</p>
+          </container>
+          <signature eId="conclusions__promulgation_1__signature_1">
+            <role refersTo="#sekretarisNegara">Pejabat Sekretaris Negara,</role>
+            <person refersTo="#santoso">SANTOSO</person>
+          </signature>
+        </container>
+      </conclusions>
+    </body>
+  </ACT>
+</akomaNtoso>
